@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree
+END
+default.properties
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/default.properties
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/.classpath
+END
+proguard.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/proguard.cfg
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/.project
+END
+build.bat
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/build.bat
+END
+local.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/local.properties
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/AndroidManifest.xml
+END
+rebuild.bat
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/rebuild.bat
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/sms_utils/!svn/ver/173/group_sms/GroupSMSFree/build.xml
+END

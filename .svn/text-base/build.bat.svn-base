@@ -1,0 +1,1 @@
+ant release -propertyfile F:\workspace\key.properties

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="org.baole.app.groupsmsad2" android:versionCode="8" android:versionName="3.0">
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.SEND_MMS" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.WRITE_SMS" />
+	<uses-permission android:name="android.permission.READ_SMS" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	
+	<uses-sdk android:minSdkVersion="5" />
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+		<provider android:name="GroupSMSProProvider"
+			android:authorities="org.baole.app.groupsmsad2.SMSUtils" />
+
+
+		<activity android:name=".Main" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="org.baole.Main" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+
+        <activity android:name=".LauncherShortcuts"
+                  android:label="@string/send_shortcuts">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.PROSMS" />
+            </intent-filter>
+
+        </activity>
+        <!-- It is recommended that you use an activity-alias to provide the "CREATE_SHORTCUT" -->
+        <!-- intent-filter.  This gives you a way to set the text (and optionally the -->
+        <!-- icon) that will be seen in the launcher's create-shortcut user interface. -->
+
+        <activity-alias android:name=".CreateShortcuts"
+            android:targetActivity=".LauncherShortcuts"
+            android:label="@string/send_shortcuts">
+
+            <!--  This intent-filter allows your shortcuts to be created in the launcher. -->
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity-alias>
+
+		<activity android:label="@string/send_sms" android:name=".SendActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.PROSMS" />
+            </intent-filter>
+		</activity>
+
+		<activity android:name="org.baole.core.ContactPicker3" android:label="Select contacts"/>
+		<activity android:name="org.baole.core.ContactPicker5" android:label="Select contacts"/>
+
+
+		<activity android:name="org.baole.csv.SendCSVFile" android:label="Send CSV file"/>
+
+		<activity android:name="org.baole.core.FileBrowser"
+			android:label="Select a csv file"/>
+		<activity android:name="org.baole.core.Preferences"
+			android:label="Settings"/>
+		<activity android:name="org.baole.core.TemplateEditor"
+			android:theme="@android:style/Theme.Light" android:label="@string/title_note"
+			android:screenOrientation="sensor" android:configChanges="keyboardHidden|orientation">
+
+			<intent-filter android:label="@string/resolve_edit">
+				<action android:name="org.baole.TemplateEditor" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+
+			<!--
+				This filter says that we can view or edit the data of a single note
+			-->
+			<intent-filter android:label="@string/resolve_edit">
+				<action android:name="android.intent.action.VIEW" />
+				<action android:name="android.intent.action.EDIT" />
+				<action android:name="com.android.notepad.action.EDIT_NOTE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="vnd.android.cursor.item/vnd.org.baole.app.groupsmsad2.template" />
+			</intent-filter>
+
+			<!--
+				This filter says that we can create a new note inside of a directory
+				of notes.
+			-->
+			<intent-filter>
+				<action android:name="android.intent.action.INSERT" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="vnd.android.cursor.dir/vnd.org.baole.app.groupsmsad2.template" />
+			</intent-filter>
+		</activity>
+		<activity android:name="org.baole.core.TitleEditor"
+			android:label="@string/title_edit_title" android:theme="@android:style/Theme.Dialog"
+			android:windowSoftInputMode="stateVisible">
+			<intent-filter android:label="@string/resolve_title">
+				<action android:name="com.android.notepad.action.EDIT_TITLE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.ALTERNATIVE" />
+				<category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+				<data android:mimeType="vnd.android.cursor.item/vnd.org.baole.app.groupsmsad2.template" />
+			</intent-filter>
+		</activity>
+		
+	<activity android:name="com.google.ads.AdActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation" />
+	
+		
+	</application>
+</manifest> 
